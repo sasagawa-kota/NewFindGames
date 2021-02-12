@@ -1,0 +1,44 @@
+h1,h2 {
+  font-weight: 100;
+}
+
+.text_white {
+  color: #fff;
+}
+
+.btn_white {
+  color: #fff;
+  border: 1px solid #fff;
+  padding-top: 15px;
+  font-size: 15px;
+  background-color: rgba(0,0,0,0.0);
+  
+  &:hover {
+    color: #777;
+  }
+}
+
+.top_hero_wrapper_text_conter {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('A6400229.JPG');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.top_hero_container {
+  padding-top: 220px;
+  h1 {
+    font-size: 100px;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}

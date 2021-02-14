@@ -1,13 +1,12 @@
-div.top_hero_wrapper_text_conter
-  div.top_hero_container
-    h1.text_white NewFindGames
-    h2.text_white 新しいストーリーを見つけましょう
+div.top-hero-wrapper-text-conter
+  div.top-hero-container
+    h1.text-white NewFindGames
+    h2.text-white 新しいストーリーを見つけましょう
     
     div.row
-      div.col-md-offset-5.col-md-3
-        = link_to '/#', class: 'btn btn_block btn_white'  do
-          |  サインアップ
+      div.col-md-offset-4.col-md-3
+        = link_to '/admin/users/new', class: 'btn btn-block btn-white'
+          | ユーザー登録
           span
-        = link_to '/#', class: 'btn btn_block btn_white'  do
-          |  ログイン
-          
+        = link_to '/#', class: 'btn btn-block btn-white'  do
+          | ログイン

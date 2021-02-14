@@ -1,0 +1,24 @@
+= form_with model: [:admin, @user], local: true do |f|
+    div.admin-users-new
+      div.container
+        div.row
+          div.col-md-offset-4.col-md-4.users-new-container
+            h1.text-white ユーザー登録
+            
+            .form-group
+              = f.label :name, '名前', class: 'form-name-text'
+              = f.text_field :name ,class: 'form-control'
+ 
+            .form-group
+              = f.label :email, 'メールアドレス', class: 'form-name-text'
+              = f.text_field :email, class: 'form-control'
+  
+            .form-group
+              = f.label :password, 'パスワード', class: 'form-name-text'
+              = f.password_field :password, class: 'form-control'
+  
+            .form-group
+              = f.label :password_confirmation, 'パスワード確認', class: 'form-name-text'
+              = f.password_field :password_confirmation, class: 'form-control'
+
+            = f.submit '登録する', class: 'btn btn-block btn-white' do

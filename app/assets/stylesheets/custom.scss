@@ -2,11 +2,11 @@ h1,h2 {
   font-weight: 100;
 }
 
-.text_white {
+.text-white {
   color: #fff;
 }
 
-.btn_white {
+.btn-white {
   color: #fff;
   border: 1px solid #fff;
   padding-top: 15px;
@@ -18,7 +18,7 @@ h1,h2 {
   }
 }
 
-.top_hero_wrapper_text_conter {
+.top-hero-wrapper-text-conter {
   width: 100vw;
   height: 100vh;
   background-image: url('A6400229.JPG');
@@ -29,7 +29,7 @@ h1,h2 {
   background-color: #464646;
 }
 
-.top_hero_container {
+.top-hero-container {
   padding-top: 220px;
   h1 {
     font-size: 100px;
@@ -41,4 +41,24 @@ h1,h2 {
     margin-bottom: 30px;
     text-align: center;
   }
+}
+
+.admin-users-new {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('A6400229.JPG');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.form-group {
+  padding-top: 20px;
+}
+
+.form-name-text {
+  font-size: 17px;
+  color: #fff;
 }

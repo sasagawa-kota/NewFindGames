@@ -1,14 +1,13 @@
-.nev.justify-content-end
-  = link_to '一覧', admin_users_path, class: 'nav-link'
-  
-= render partial: 'from', locals: { user: @user}
-
+- if user.errors.present?
+  ul#error_explanation
+    - user.errors.full_messages.each do |message|
+      li = message
+      
 = form_with model: [:admin, @user], local: true do |f|
     div.admin-users-new
       div.container
         div.row
           div.col-md-offset-4.col-md-4.users-new-container
-            h1.text-white ユーザー登録
             
             .form-group
               = f.label :name, '名前', class: 'form-name-text'

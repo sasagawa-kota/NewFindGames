@@ -1,0 +1,16 @@
+=form_with scope: :session, local: true do |f|
+  div.admin-users-new
+    div.container
+      div.row
+        div.col-md-offset-4.col-md-4.users-new-container
+          h1.text-white ログイン
+          
+          .form-group
+            = f.label :email, 'メールアドレス', class: 'form-name-text'
+            = f.text_field :email, class: 'form-control', id: 'session_email'
+            
+          .form-group
+            = f.label :password, 'パスワード', class: 'form-name-text'
+            = f.password_field :password, class: 'form-control', id: 'session_password'
+        
+          =f.submit 'ログイン', class: 'btn-block btn-white'

@@ -7,7 +7,7 @@
             
             .form-group
               = f.label :name, '名前', class: 'form-name-text'
-              = f.text_field :name ,class: 'form-control'
+              = f.text_field :name, class: 'form-control'
  
             .form-group
               = f.label :email, 'メールアドレス', class: 'form-name-text'
@@ -21,4 +21,4 @@
               = f.label :password_confirmation, 'パスワード確認', class: 'form-name-text'
               = f.password_field :password_confirmation, class: 'form-control'
 
-            = f.submit '登録する', class: 'btn btn-block btn-white' do
+            = f.submit '登録する', class: 'btn-block btn-white'

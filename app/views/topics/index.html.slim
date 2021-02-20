@@ -1,0 +1,12 @@
+  div.topic-index-wrapper
+    div.container
+      - @topics.each do |topic|
+        div.col-md-5.col-md-offset-1
+          div.topic-index-single
+            h2.topic-title
+              = topic.title
+            = image_tag topic.package_image.url
+            
+            p.topic-text
+              = topic.description
+              

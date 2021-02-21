@@ -8,9 +8,11 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    ul.navbar-nav.ml-auto  
-      - if current_user
-        - if current_user.admin?
-          li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
-        li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' 
+    - if current_user
+      nav.navbar.navbar-default.navbar-fixed.navbar-transparent
+        ul.nav.navbar-nav.navbar-left
+          .nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+          span
+          - if current_user.admin?
+            .nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
     = yield

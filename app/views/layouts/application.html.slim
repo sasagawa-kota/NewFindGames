@@ -8,12 +8,12 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    
-    nav.navbar.navbar-default.navbar-fixed.navbar-transparent
-      - if current_user
-        ul.nav.navbar-nav.navbar-left
-          li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link1'
-          - if current_user.admin?
-            li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link2'
-            li.nav-item= link_to '新規投稿', new_topic_path,class: 'nav-link3'
+    nav.navbar.navbar-inverse.navbar-fixed-top.navbar-transparent
+      div.container
+        - if current_user
+          ul.nav.navbar-nav.navbar-left
+            li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link1'
+            - if current_user.admin?
+              li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link2'
+              li.nav-item= link_to '新規投稿', new_topic_path,class: 'nav-link3'
     = yield

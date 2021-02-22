@@ -12,9 +12,10 @@
           .form-group
             = f.label :title, 'タイトル', class: 'form-name-text'
             = f.text_field :title, class: 'form-control'
-          
+            
           .form-group
             = f.label :description, '紹介文', class: 'form-name-text'
-            = f.text_area :description, class: 'form-control'
-          
+            = f.text_area :description, row: 5, class: 'form-control', id:'topic_description'
+  
           =  f.submit '投稿', class: 'btn btn-primary mr-3'
+          

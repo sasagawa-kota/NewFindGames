@@ -103,3 +103,10 @@ h1,h2 {
 .topic-show-wrapper {
   padding-top: 30px;
 }
+
+.topic-edit-wrapper {
+  padding-top: 30px;
+  .admin-form-name-text {
+    color: #000;
+  }
+}

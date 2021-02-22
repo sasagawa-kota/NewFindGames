@@ -41,3 +41,8 @@ ja:
     password_confirmation: パスワード(確認)
     created_at: 登録日時
     updated_at: 更新日時
+  
+  helpers:
+    create: 登録
+    submit: 保存
+    update: 更新

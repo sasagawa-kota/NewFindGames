@@ -28,7 +28,7 @@ class TopicsController < ApplicationController
   def update
     topic = Topic.find(params[:id])
     topic.update!(topic_params)
-    redirect_to topic_url, notice: "タスク「#{topic.title}を更新しました」"
+    redirect_to topic_url, notice: "記事「#{topic.title}を更新しました」"
   end
   
   def destroy

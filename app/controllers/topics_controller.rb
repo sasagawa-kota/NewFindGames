@@ -17,6 +17,10 @@ class TopicsController < ApplicationController
     end
   end
   
+  def show
+    @topic = Topic.find(params[:id])
+  end
+  
   def destroy
     @topic = Topic.find(params[:id])
     @topic.destroy

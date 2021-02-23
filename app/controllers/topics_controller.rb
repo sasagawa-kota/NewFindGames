@@ -32,9 +32,9 @@ class TopicsController < ApplicationController
   end
   
   def destroy
-    @topic = Topic.find(params[:id])
-    @topic.destroy
-    redirect_to topic_url
+    topic = Topic.find(params[:id])
+    topic.destroy
+    redirect_to topics_path,notice: "記事「#{topic.title}を削除しました」"
   end
   
   private

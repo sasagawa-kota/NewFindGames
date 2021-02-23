@@ -13,3 +13,4 @@ div.topic-show-wrapper
           
           - if current_user.admin?
             = link_to '編集', edit_topic_path, class: 'btn btn-primary mr-3'
+            = link_to '削除', @topic, method: :delete, data: { confirm: "「#{@topic.title}を削除します、よろしいですか？」"},class: 'btn btn-primary mr-3' 

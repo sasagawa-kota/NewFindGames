@@ -1,21 +1,4 @@
-= form_with model: @topic, local: true do |f|
-  div.topic-new-wrapper
-    div.container
-      div.row
-        div.col-md-6.col-md-offset-3.topics-new-container
-          h1.text 記事投稿
-        
-          .form-group
-            = f.label :package_image, 'パッケージ画像', class: 'form-name-text'
-            = f.file_field :package_image
-          
-          .form-group
-            = f.label :title, 'タイトル', class: 'form-name-text'
-            = f.text_field :title, class: 'form-control'
-            
-          .form-group
-            = f.label :description, '紹介文', class: 'form-name-text'
-            = f.text_area :description, row: 5, class: 'form-control', id:'topic_description'
-  
-          =  f.submit '投稿', class: 'btn btn-primary mr-3'
-          
+div.row
+  div.col-md-offset-3.col-md-3
+     h2.text-brack 新規投稿
+= render partial: 'form', locals: { topic: @topic }

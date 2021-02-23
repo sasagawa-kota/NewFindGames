@@ -32,3 +32,9 @@
 ja:
   hello: "Hello world"
   
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+      destroy: 削除

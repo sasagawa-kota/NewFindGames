@@ -6,7 +6,7 @@ h1,h2 {
   color: #fff;
 }
 
-.btn-white {
+.btn-white { /*トップページボタン*/
   color: #fff;
   border: 1px solid #fff;
   padding-top: 15px;
@@ -19,7 +19,7 @@ h1,h2 {
   }
 }
 
-.top-hero-wrapper-text-conter {
+.top-hero-wrapper-text-conter { /*トップページ*/
   width: 100vw;
   height: 100vh;
   background-image: url('A6400229.JPG');
@@ -44,7 +44,7 @@ h1,h2 {
   }
 }
 
-.admin-users-new {
+.admin-users-new { /*ユーザー登録画面*/
   width: 100vw;
   height: 100vh;
   padding-top: 30px;
@@ -56,31 +56,31 @@ h1,h2 {
   background-color: #464646;
 }
 
-.form-group {
+.form-group { /*入力フォーム*/
   padding-top: 20px;
 }
 
-.form-name-text {
+.form-name-text { /*フォーム名*/
   font-size: 17px;
-  color: #fff;
+  color: #000;
 }
 
-.topic-index-wrapper {
+.topic-index-wrapper { /*記事一覧ページ*/
   padding-top: 10px;
   background-image: url('A6400224.JPG');
-  .topic-index-single {
+  .topic-index-single { /*投稿記事*/
     background-color: #fff;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
-    .topic-title {
+    .topic-title { /*記事タイトル*/
       padding-right: 20px;
       padding-left: 20px;
     }
     
-    .topic-text {
+    .topic-text { /*記事説明*/
       padding-right: 20px;
       padding-left: 20px;
     }
@@ -93,7 +93,7 @@ h1,h2 {
   }
 }
 
-.nav-transparent {
+.nav-transparent { /*ナビゲーションバー*/
   margin-bottom: 0px;
   background-color: rgba(0,0,0,0.5);
   a {
@@ -101,13 +101,19 @@ h1,h2 {
   }
 }
 
-.topic-show-wrapper {
+.topic-show-wrapper { /*詳細ページ*/
   padding-top: 30px;
 }
 
-.topic-edit-wrapper {
+.topic-edit-wrapper { /*更新ページ*/
   padding-top: 30px;
   .admin-form-name-text {
     color: #000;
   }
+}
+
+.text-brack {
+  padding-top: 30px;
+  font-size: 38px;
+  
 }

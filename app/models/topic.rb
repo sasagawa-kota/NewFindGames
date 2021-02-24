@@ -4,6 +4,7 @@ class Topic < ApplicationRecord
   validates :description, presence: true
   
   belongs_to :user
+  has_many :reviews
   
   mount_uploader :package_image, ImageUploader
 end

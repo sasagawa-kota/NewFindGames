@@ -5,11 +5,20 @@ div.topic-show-wrapper
         div.topic-show
           h2.topic-title
             = @topic.title
-          
+            
           = @topic.package_image
           
           p.topic-text
             = @topic.description
+          
+          table.table
+            - @reviews.each do |review|
+              tr
+                td= review.game_reviewe
+          
+          = form_with model: [@topic, @review], local: true do |f|
+            = f.text_area :game_reviewe, class: 'form-name-text', row: 5
+            = f.submit nil, class: 'btn btn-primary mr-3'
           
           - if current_user.admin?
             = link_to '編集', edit_topic_path, class: 'btn btn-primary mr-3'

@@ -62,12 +62,12 @@ h1,h2 {
 
 .form-name-text { /*フォーム名*/
   font-size: 17px;
-  color: #464646;
+  color: #fff;
 }
 
 .topic-index-wrapper { /*記事一覧ページ*/
-  padding-top: 10px;
   background-image: url('A6400224.JPG');
+  padding-top: 10px;
   .topic-index-single { /*投稿記事*/
     background-color: #fff;
     padding-top: 20px;
@@ -112,8 +112,6 @@ h1,h2 {
   }
 }
 
-.text-brack {
-  padding-top: 30px;
-  font-size: 38px;
-  
+.new-topic-form-name-text {
+  color: #000;
 }

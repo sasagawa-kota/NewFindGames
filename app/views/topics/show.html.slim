@@ -17,7 +17,7 @@ div.topic-show-wrapper
                 div= safe_join(review.game_reviewe.to_s.split("\n"),tag(:br))
           
           = form_with model: [@topic, @review], local: true do |f|
-            = f.text_area :game_reviewe, class: 'form-name-text', row: 5
+            = f.text_area :game_reviewe, class: 'new-topic-form-name-text', row: 5
             = f.submit nil, class: 'btn btn-primary mr-3'
           
           - if current_user.admin?

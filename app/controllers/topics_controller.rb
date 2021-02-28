@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
   
   def create
     @topic = current_user.topics.new(topic_params)
-    
+    #binding.pry
     if @topic.save
       redirect_to topics_path, notice: '投稿に成功しました'
     else
@@ -29,6 +29,7 @@ class TopicsController < ApplicationController
   
   def update
     topic = Topic.find(params[:id])
+    #binding.pry
     topic.update!(topic_params)
     redirect_to topic_url, notice: "記事「#{topic.title}を更新しました」"
   end
@@ -42,6 +43,6 @@ class TopicsController < ApplicationController
   private
   
   def topic_params
-    params.require(:topic).permit(:package_image, :title, :description, category_ids: [])
+    params.require(:topic).permit(:package_image, :title, :description, :category_id)
   end
 end

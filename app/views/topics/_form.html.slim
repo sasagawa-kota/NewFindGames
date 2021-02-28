@@ -14,11 +14,9 @@
           .form-group
             = f.label :description, '紹介文', class: 'new-topic-form-name-text'
             = f.text_area :description, row: 5, class: 'form-control', id:'topic_description'
-            
-          = f.label :category, 'カテゴリー'
-          = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
-            = category.label do
-            = category.check_box
           
+          .form-group
+            = f.label :category_id, 'カテゴリー'
+            = f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control'
           = f.submit nil, class: 'btn btn-primary mr-3'
           

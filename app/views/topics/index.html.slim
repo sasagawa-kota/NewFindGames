@@ -1,14 +1,1 @@
-  div.topic-index-wrapper
-    div.container
-      div.row
-        - @topics.each do |topic|
-          div.col-md-5.col-md-offset-1
-            div.topic-index-single
-              
-              h2.topic-title
-                = link_to topic.title, topic
-              table
-                  tr= image_tag topic.package_image.url
-            
-                  tr.p.topic-text
-                    div= safe_join(topic.description.split("\n"),tag(:br))
+ = render partial: 'topic', locals: { topics: @topics }

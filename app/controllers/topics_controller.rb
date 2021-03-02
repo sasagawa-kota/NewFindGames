@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.all
   end
+  
   def new
     @topic = Topic.new
   end
@@ -38,6 +39,11 @@ class TopicsController < ApplicationController
     topic = Topic.find(params[:id])
     topic.destroy
     redirect_to topics_path,notice: "記事「#{topic.title}を削除しました」"
+  end
+  
+  def category
+      @topics  = Category.find_by(name: params[:name]).topics
+      #@topics = @category.topics.order(created_at: :desc).all
   end
   
   private

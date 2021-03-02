@@ -17,5 +17,8 @@ Rails.application.routes.draw do
   end
   
   resources :topics
+  #resources :categories
+  get 'topic/category/:name' => 'topics#category',as:'topic_categories'
+  #get 'categories/show/:name' => 'categories#show',as:'categories_show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

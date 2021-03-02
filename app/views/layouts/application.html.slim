@@ -13,10 +13,10 @@ html
         - if current_user
           ul.nav.navbar-nav.navbar-left
             li.nav-item= link_to 'NewFindGames', topics_path, class: 'nav-brand'
-            li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link1'
+            li.nav-item= link_to 'アクション', topic_categories_path(name: "アクション"), clsss: 'nav-link'
             - if current_user.admin?
-              li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link2'
-              li.nav-item= link_to '新規投稿', new_topic_path,class: 'nav-link3'
+              li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: 'nav-link'
+              li.nav-item= link_to '新規投稿', new_topic_path, class: 'nav-link'
         - if flash.notice.present?
           .alert.alert-success= flash.notice
           

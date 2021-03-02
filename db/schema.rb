@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 2021_02_22_161237) do
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "category_id"
     t.string "title"
     t.text "description"
     t.integer "reviews_count"
-    t.string "package_image"
+    t.integer "package_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

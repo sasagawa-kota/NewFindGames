@@ -43,7 +43,6 @@ class TopicsController < ApplicationController
   
   def category
       @topics  = Category.find_by(name: params[:name]).topics
-      #@topics = @category.topics.order(created_at: :desc).all
   end
   
   private

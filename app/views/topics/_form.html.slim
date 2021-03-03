@@ -3,20 +3,21 @@
     div.container
       div.row
         div.col-md-6.col-md-offset-3.topics-new-container
-          .form-group
-            = f.label :package_image, 'パッケージ画像', class: 'new-topic-form-name-text'
-            = f.file_field :package_image
+          div.topic-form
+            .form-group
+              = f.label :package_image, 'パッケージ画像', class: 'new-topic-form-name-text'
+              = f.file_field :package_image
           
-          .form-group
-            = f.label :title, 'タイトル', class: 'new-topic-form-name-text'
-            = f.text_field :title, class: 'form-control'
+            .form-group
+              = f.label :title, 'タイトル', class: 'new-topic-form-name-text'
+              = f.text_field :title, class: 'form-control'
             
-          .form-group
-            = f.label :description, '紹介文', class: 'new-topic-form-name-text'
-            = f.text_area :description, row: 5, class: 'form-control', id:'topic_description'
+            .form-group
+              = f.label :description, '紹介文', class: 'new-topic-form-name-text'
+              = f.text_area :description, row: 5, class: 'form-control', id:'topic_description'
           
-          .form-group
-            = f.label :category_id, 'カテゴリー'
-            = f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control'
-          = f.submit nil, class: 'btn btn-primary mr-3'
+            .form-group
+              = f.label :category_id, 'カテゴリー'
+              = f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control'
+            = f.submit nil, class: 'btn btn-primary mr-3'
           

@@ -1,3 +1,88 @@
-// Place all the styles related to the topics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body
+{
+    background: url("A6400224.JPG");
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-size: cover;               /* 全画面 */
+    background-attachment: fixed;         /* 固定 */
+    background-position: center center;   
+}
+
+.topic-index-wrapper {                   /*記事一覧ページ*/
+  padding-top: 50px;
+  text-align: center;
+  .topic-body {                          /*投稿記事*/
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+    .topic-title {                       /*記事タイトル*/
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    
+    .topic-text {                        /*記事説明*/
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+    
+    img {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 55%;
+    }
+  }
+}
+
+img {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 70%;
+    }
+
+.topic-new-wrapper {
+    padding-top: 20px;
+    .topics-new-container {
+      padding: 10px;
+      .topic-form {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #fff;
+    }
+  }  
+}
+.topics-new-container {
+  padding-top: 10px;
+}
+
+.topic-form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+
+.topic-show-wrapper {                  /*詳細ページ*/
+  padding-top: 30px;
+  .topic-show {
+    background-color: #fff;
+    padding-bottom: 200px;
+  }
+  .topic-show-image{
+    text-align: center;
+  }
+}
+
+
+.img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 10%;
+}
+    
+.form-rate {
+  width: 10%;
+  height: 10%;
+  display: flex;
+}  

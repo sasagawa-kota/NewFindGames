@@ -10,9 +10,8 @@ class ReviewsController < ApplicationController
   
   def create
     topic = Topic.find(params[:topic_id])
-    @review = topic.reviews.build(review_params)
+    @review = topic.reviews.new(review_params)
     @review.user_id = current_user.id
-    
     if @review.save
       redirect_to topics_path, notice: 'コメントに成功しました'
     else

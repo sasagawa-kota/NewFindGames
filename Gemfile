@@ -76,3 +76,4 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'carrierwave'
 gem 'ancestry'
+

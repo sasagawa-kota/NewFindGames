@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_22_161237) do
+ActiveRecord::Schema.define(version: 2021_03_03_113852) do
 
   create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_161237) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rate", default: 0.0, null: false
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_02_22_161237) do
     t.string "title"
     t.text "description"
     t.integer "reviews_count"
-    t.integer "package_image"
+    t.string "package_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

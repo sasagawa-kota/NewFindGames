@@ -6,7 +6,7 @@ class CreateTopics < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :description
       t.integer :reviews_count
-      t.integer :package_image
+      t.string :package_image
 
       t.timestamps
     end

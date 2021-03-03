@@ -65,12 +65,19 @@ img {
 
 .topic-show-wrapper {                  /*詳細ページ*/
   padding-top: 30px;
+  text-align: center;
   .topic-show {
     background-color: #fff;
     padding-bottom: 200px;
-  }
-  .topic-show-image{
-    text-align: center;
+    .review-text{
+      padding-bottom: 5px;
+    }
+    .form-rate {
+      text-align: center;
+      width: 10%;
+      height: 10%;
+      display: flex;
+    }   
   }
 }
 
@@ -81,8 +88,4 @@ img {
   width: 10%;
 }
     
-.form-rate {
-  width: 10%;
-  height: 10%;
-  display: flex;
-}  
+  

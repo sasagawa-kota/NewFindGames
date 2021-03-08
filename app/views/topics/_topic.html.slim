@@ -8,9 +8,13 @@ div.topic-index-wrapper
               h2.topic-title
                 = link_to topic.title, topic
               
-              .text-left
+              .topic-explanation
                 = image_tag topic.package_image.url
-                = safe_join(topic.description.split("\n"),tag(:br))
-                
+              
+                .topic-text
+                  = topic.description
+               
+              div= link_to topic, class: "btn btn-info"
+                  | 口コミを見る 
   
 tbody

@@ -3,35 +3,38 @@ body
     background: url("A6400224.JPG");
     /* background-size: cover; */
     background-repeat: no-repeat;
-    background-size: cover;               /* 全画面 */
-    background-attachment: fixed;         /* 固定 */
+    background-size: cover;  /* 全画面 */
+    background-attachment: fixed;  /* 固定 */
     background-position: center center;   
 }
 
-.topic-index-wrapper {                   /*記事一覧ページ*/
-  padding-top: 50px;
+.topic-index-wrapper {  /*記事一覧ページ*/
+  padding-top: 30px;
   text-align: center;
-  .topic-body {                          /*投稿記事*/
+  .topic-body {  /*投稿記事*/
     background-color: #fff;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin-top: 30px;
     border: 1px solid #e6ecf0;
     border-radius: 3px;
-    .topic-title {                       /*記事タイトル*/
-      padding-right: 20px;
-      padding-left: 20px;
+    float: left;
+    .topic-title {  /*記事タイトル*/
+      a {
+        color: #000 !important;
+      }
     }
-    
-    .topic-text {                        /*記事説明*/
-      padding-right: 20px;
-      padding-left: 20px;
-    }
-    
-    img {
-      margin-top: 10px;
-      margin-bottom: 20px;
-      width: 55%;
+    .topic-explanation {
+      display:flex;
+      img {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 55%;
+      }
+      .topic-text {  /*記事説明*/
+        padding-right: 20px;
+        padding-left: 20px;
+      }
     }
   }
 }
@@ -63,29 +66,44 @@ img {
   background-color: #fff;
 }
 
-.topic-show-wrapper {                  /*詳細ページ*/
+.topic-show-wrapper {  /*詳細ページ*/
   padding-top: 30px;
   text-align: center;
   .topic-show {
     background-color: #fff;
     padding-bottom: 200px;
-    .review-text{
+    .review-user-left {
+      text-align: left;
+      font-size: 20px;
+      padding-bottom: 10px;
+      border: solid;
+      border-bottom: transparent;
+      border-left: transparent;
+      border-right: transparent;
+      .review-text{
       padding-bottom: 5px;
-    }
-    .form-rate {
       text-align: center;
-      width: 10%;
-      height: 10%;
-      display: flex;
-    }   
+      font-size: 17px;
+     }
+    }
+   }   
   }
-}
+
 
 
 .img {
   margin-top: 10px;
   margin-bottom: 20px;
-  width: 10%;
+  width: 20%;
 }
     
+.btn-info { /*詳細ページボタン*/
+  padding-top: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+  text-align: center;
   
+  &:hover {
+    color: #fff;
+  }
+}

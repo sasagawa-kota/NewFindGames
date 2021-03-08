@@ -6,8 +6,8 @@ div.topic-show-wrapper
           h2.topic-title
             = @topic.title
           
-          .topic-show-image
-            .topic-image
+          
+          .topic-image
             table  
               tr= image_tag @topic.package_image.url
           
@@ -15,19 +15,17 @@ div.topic-show-wrapper
             div= safe_join(@topic.description.split("\n"),tag(:br))
             
           = form_with model: [@topic, @review], local: true do |f|
-            = f.text_area :game_reviewe, class: 'new-topic-form-name-text', rows: 5
-            #star.form-rate
-              = f.label :rate, '評価'
-              = f.hidden_field :rate, id: :review_star
+            = f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"75x5", placeholder:'口コミを投稿してみましょう！'
+            span
             = f.submit nil, class: 'btn btn-primary mr-4'
-            
-          table
-            - @reviews.each do |r|
-              = r.user.name unless r.user.blank?
-              
-              /*.review-text
-                = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
-                id="star-rate-#{@review.id}"*/
+          
+            table
+              - @reviews.each do |r|
+                div.review-user-left
+                  = r.user.name unless r.user.blank?
+                  .review-text
+                    = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
+                
           - if current_user.admin?
             = link_to '編集', edit_topic_path, class: 'btn btn-primary mr-3'
             = link_to '削除', @topic, method: :delete, data: { confirm: "#{@topic.title}を削除します、よろしいですか？"},class: 'btn btn-primary mr-3' 

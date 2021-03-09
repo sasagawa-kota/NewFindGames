@@ -31,16 +31,20 @@ h1,h2 {
   background-color: #464646;
 }
 
-.top-hero-container {
+.top-hero-container { /*トップページテキスト*/
   padding-top: 220px;
   h1 {
-    font-size: 100px;
+    font-size: 130px;
     margin-bottom: 0px;
     text-align: center;
+    color: #FF8C00;
+    background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     text-align: center;
   }
 }
@@ -73,7 +77,15 @@ h1,h2 {
   a {
     color: #fff !important;
   }
+  .alert.alert-success {
+  text-align: center;
+  }
 }
+
+.alert.alert-success {
+  font-size: 18px;
+  text-align: center;
+  }
 
 .topic-edit-wrapper { /*更新ページ*/
   padding-top: 30px;

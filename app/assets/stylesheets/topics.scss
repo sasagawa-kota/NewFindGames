@@ -1,3 +1,5 @@
+          /*   記事一覧背景   */
+          
 body
 {
     background: url("A6400224.JPG");
@@ -8,6 +10,11 @@ body
     background-position: center center;   
 }
 
+
+
+          /*  記事本体  */
+          
+          
 .topic-index-wrapper {  /*記事一覧ページ*/
   padding-top: 30px;
   text-align: center;
@@ -24,9 +31,9 @@ body
         color: #000 !important;
       }
     }
-    .topic-explanation {
-      display:flex;
-      img {
+    .topic-explanation { /*記事本体紹介（写真・文）*/
+      display: flex;
+      img {  /*記事本体（写真）*/
         margin-top: 10px;
         margin-bottom: 20px;
         width: 55%;
@@ -44,12 +51,27 @@ img {
       margin-bottom: 20px;
       width: 70%;
     }
+    
+.btn-info { /*詳細ページボタン*/
+  padding-top: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+  text-align: center;
+  
+  &:hover {
+    color: #fff;
+  }
+}
 
-.topic-new-wrapper {
+
+        /*　新規投稿　*/
+
+
+.topic-new-wrapper { 
     padding-top: 20px;
     .topics-new-container {
       padding: 10px;
-      .topic-form {
+      .topic-form {  /*　新規投稿フォーム  */
         padding-top: 20px;
         padding-bottom: 20px;
         background-color: #fff;
@@ -66,44 +88,45 @@ img {
   background-color: #fff;
 }
 
+
+
+        /*  詳細ページ  */
+
+
 .topic-show-wrapper {  /*詳細ページ*/
   padding-top: 30px;
   text-align: center;
   .topic-show {
     background-color: #fff;
     padding-bottom: 200px;
-    .review-user-left {
-      text-align: left;
-      font-size: 20px;
-      padding-bottom: 10px;
-      border: solid;
-      border-bottom: transparent;
-      border-left: transparent;
-      border-right: transparent;
-      .review-text{
-      padding-bottom: 5px;
-      text-align: center;
+    .topic-show-text {
       font-size: 17px;
-     }
     }
+    .review-title-left { /*レビュータイトル（タイトル・名前）*/
+      text-align: left;
+      font-size: 30px;
+      background-color: #FFFFCC;
+      word-wrap: break-word;
+      margin-right: 80px;
+      .show-reviewe-title {  /*レビュータイトル（タイトル）*/
+        font-size: 30px;
+        border-radius: 2px;
+        border-left: 10px solid;
+        border-right: 40px;
+        .show-user-name {  /*レビュータイトル（名前）*/
+          font-size: 15px;
+          margin-top: 5px;
+          padding-right: 10px;
+        } 
+      }
    }   
   }
-
-
-
-.img {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 20%;
-}
-    
-.btn-info { /*詳細ページボタン*/
-  padding-top: 15px;
-  font-size: 20px;
-  background-color: rgba(0,0,0,0.0);
-  text-align: center;
-  
-  &:hover {
-    color: #fff;
-  }
-}
+ }
+ 
+.reviewe-text {  /*　レビュー　*/
+      margin-bottom: 20px;
+      text-align: center;
+      word-wrap: break-word;
+      font-size: 18px;
+      margin-right: 80px;
+    }

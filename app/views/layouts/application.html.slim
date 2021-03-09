@@ -8,9 +8,9 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    nav.navbar.navbar-inverse.navbar-fixed-top.navbar-transparent
-      div.container
-        - if current_user
+    .nav.navbar.navbar-inverse.navbar-fixed-top.navbar-transparent
+      - if current_user
+        div.container
           ul.nav.navbar-nav.navbar-left
             li.nav-item= link_to 'NewFindGames', topics_path, class: 'nav-brand'
             li.nav-item= link_to 'アクション', topic_categories_path(name: "アクション"), clsss: 'nav-link'
@@ -23,13 +23,12 @@ html
             li.nav-item= link_to 'リズム', topic_categories_path(name: "リズム"), clsss: 'nav-link'
             - if current_user.admin?
               li.nav-item= link_to '新規投稿', new_topic_path, class: 'nav-link'
-            li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
-        - if flash.notice.present?
-          .alert.alert-success= flash.notice
-          
+            li.nav-item= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link-logout'
+            - if flash.notice.present?
+              .alert.alert-success= flash.notice
     = yield
     
     javascript:
       $(function(){
-        $(".alert").fadeOut(5000);
+        $(".alert").fadeOut(3500);
       });

@@ -9,11 +9,11 @@ div.topic-index-wrapper
                 = link_to topic.title, topic
               
               .topic-explanation
-                = image_tag topic.package_image.url
+                = image_tag topic.package_image.url, :size=>"180"
               
                 .topic-text
-                  = topic.description
-               
+                  = truncate(topic.description, length:100)
+                  
               div= link_to topic, class: "btn btn-info"
                   | 口コミを見る 
   

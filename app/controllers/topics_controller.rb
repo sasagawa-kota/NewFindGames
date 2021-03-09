@@ -13,7 +13,8 @@ class TopicsController < ApplicationController
     if @topic.save
       redirect_to topics_path, notice: '投稿に成功しました'
     else
-      flash.now[:danger] = "投稿に失敗しました"
+      flash[:danger] = "投稿に失敗しました"
+      flash.discard(:danger)
       render :new
     end
   end

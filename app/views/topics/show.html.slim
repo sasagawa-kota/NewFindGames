@@ -1,32 +1,38 @@
 div.topic-show-wrapper
   div.container
-    div.row
-      div.col-md-6.col-md-offset-3
-        div.topic-show
-          h2.topic-title
-            = @topic.title
+    div.topic-show
+      h1.topic-title
+        = @topic.title
           
           
-          .topic-image
-            table  
-              tr= image_tag @topic.package_image.url
+      p.topic-image
+        table  
+          tr= image_tag @topic.package_image.url
           
-          p.topic-text
-            div= safe_join(@topic.description.split("\n"),tag(:br))
+      h2.text
+        =  'ゲーム内容'
+        
+      p.topic-show-text
+        = safe_join(@topic.description.split("\n"),tag(:br))
             
-          = form_with model: [@topic, @review], local: true do |f|
-            = f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"75x5", placeholder:'口コミを投稿してみましょう！'
-            span
-            = f.submit nil, class: 'btn btn-primary mr-4'
+      = form_with model: [@topic, @review], local: true do |f|
+        p= f.text_field :game_title, class: 'new-topic-form-name-text', :size=>"74x1", placeholder:'口コミタイトル'
+        p= f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"75x5", placeholder:'口コミを投稿してみましょう！'
+        span
+        p= f.submit nil, class: 'btn btn-primary mr-4'
           
-            table
-              - @reviews.each do |r|
-                div.review-user-left
+      table
+        - @reviews.each do |r|
+          div.review-title-left
+              div.show-reviewe-title
+                = r.game_title
+                div.show-user-name
+                  = r.created_at
                   = r.user.name unless r.user.blank?
-                  .review-text
-                    = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
+          div.reviewe-text
+            = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
                 
-          - if current_user.admin?
-            = link_to '編集', edit_topic_path, class: 'btn btn-primary mr-3'
-            = link_to '削除', @topic, method: :delete, data: { confirm: "#{@topic.title}を削除します、よろしいですか？"},class: 'btn btn-primary mr-3' 
+      - if current_user.admin?
+        = link_to '編集', edit_topic_path, class: 'btn btn-primary mr-3'
+        = link_to '削除', @topic, method: :delete, data: { confirm: "#{@topic.title}を削除します、よろしいですか？"},class: 'btn btn-primary mr-3' 
  

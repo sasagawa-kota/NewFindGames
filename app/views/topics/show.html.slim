@@ -19,19 +19,39 @@ div.topic-show-wrapper
         p= f.text_field :game_title, class: 'new-topic-form-name-text', :size=>"74x1", placeholder:'口コミタイトル'
         p= f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"75x5", placeholder:'口コミを投稿してみましょう！'
         span
+        div.container
+          div.reviewe-score
+            div.flex-reviewe
+              p.form-score
+                = f.label :score, '爽快感', class: 'reviewe-score'
+                = f.range_field :score, in: 1..10, value: "0", class: 'form-control'
+              span  
+              p.form-score
+                = f.label :score2, '達成感', class: 'reviewe-score2'
+                = f.range_field :score2, in: 1..10, value: "0", class: 'form-control'
+              p.form-score
+                = f.label :score3, 'やりこみ度', class: 'reviewe-score3'
+                = f.range_field :score3, in: 1..10, value: "0", class: 'form-control'
+              p.form-score
+                = f.label :score4, 'ギャグ性', class: 'reviewe-score4'
+                = f.range_field :score4, in: 1..10, value: "0", class: 'form-control'  
         p= f.submit nil, class: 'btn btn-primary mr-4'
-          
-      table
-        - @reviews.each do |r|
-          div.review-title-left
+        
+        div.container    
+          - @reviews.each do |r|
+            div.review-title-left
               div.show-reviewe-title
                 = r.game_title
                 div.show-user-name
                   = r.created_at
                   = r.user.name unless r.user.blank?
-          div.reviewe-text
-            = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
-                
+            div.reviewe-text
+              = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
+            div.review-score
+              = "爽快感：#{r.score}　　"
+              = "達成感：#{r.score2}　　"
+              = "やりこみ度：#{r.score3}　　"
+              = "ギャグ性：#{r.score4}"
       - if current_user.admin?
         = link_to '編集', edit_topic_path, class: 'btn btn-primary mr-3'
         = link_to '削除', @topic, method: :delete, data: { confirm: "#{@topic.title}を削除します、よろしいですか？"},class: 'btn btn-primary mr-3' 

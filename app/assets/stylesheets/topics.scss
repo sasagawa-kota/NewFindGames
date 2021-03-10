@@ -123,10 +123,21 @@ img {
   }
  }
  
-.reviewe-text {  /*　レビュー　*/
-      margin-bottom: 20px;
-      text-align: center;
-      word-wrap: break-word;
-      font-size: 18px;
-      margin-right: 80px;
+.reviewe-text {  /*　レビュー文　*/
+  margin-bottom: 20px;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 18px;
+  margin-right: 80px;
+}
+
+    
+.reviewe-score {
+  .flex-reviewe{ 
+    display: flex;
+    .form-score {
+      width: 270px;
+      margin-left: 5px;
     }
+  }
+}

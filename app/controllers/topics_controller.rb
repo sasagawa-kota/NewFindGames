@@ -13,8 +13,7 @@ class TopicsController < ApplicationController
     if @topic.save
       redirect_to topics_path, notice: '投稿に成功しました'
     else
-      flash[:danger] = "投稿に失敗しました"
-      flash.discard(:danger)
+      flash[:notice] = "投稿に失敗しました"
       render :new
     end
   end
@@ -22,7 +21,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @reviews = @topic.reviews
-    @review = @topic.reviews.build
+    # binding.pry
   end
   
   def edit

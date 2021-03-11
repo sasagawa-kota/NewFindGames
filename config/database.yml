@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: new-find-games_production
-  username: new-find-games
-  password: <%= ENV['NEW-FIND-GAMES_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

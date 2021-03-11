@@ -14,30 +14,45 @@ div.topic-show-wrapper
         
       p.topic-show-text
         = safe_join(@topic.description.split("\n"),tag(:br))
+      
+      h2.text
+        = '口コミ投稿'
             
-      = form_with model: [@topic, @review], local: true do |f|
+      = form_with model: [@topic, Review.new], local: true do |f|
         p= f.text_field :game_title, class: 'new-topic-form-name-text', :size=>"74x1", placeholder:'口コミタイトル'
-        p= f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"75x5", placeholder:'口コミを投稿してみましょう！'
+        p= f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"90x5", placeholder:'口コミを投稿してみましょう！'
         span
+        h4.text
+          = '10段階評価(最小値は１です)'
         div.container
-          div.reviewe-score
-            div.flex-reviewe
+          div.topic-score
+            div.flex-score
               p.form-score
-                = f.label :score, '爽快感', class: 'reviewe-score'
-                = f.range_field :score, in: 1..10, value: "0", class: 'form-control'
-              span  
+                = f.label :score, '爽快感', class: 'topic-score'
+                = f.range_field :score, in: 1..10, value: "1", list: "tlist", class: 'form-control'
               p.form-score
-                = f.label :score2, '達成感', class: 'reviewe-score2'
-                = f.range_field :score2, in: 1..10, value: "0", class: 'form-control'
+                = f.label :score2, '達成感', class: 'topic-score2'
+                = f.range_field :score2, in: 1..10, value: "1", list: "tlist", class: 'form-control'
               p.form-score
-                = f.label :score3, 'やりこみ度', class: 'reviewe-score3'
-                = f.range_field :score3, in: 1..10, value: "0", class: 'form-control'
+                = f.label :score3, 'やりこみ度', class: 'topic-score3'
+                = f.range_field :score3, in: 1..10, value: "1", list: "tlist", class: 'form-control'
               p.form-score
-                = f.label :score4, 'ギャグ性', class: 'reviewe-score4'
-                = f.range_field :score4, in: 1..10, value: "0", class: 'form-control'  
+                = f.label :score4, 'ギャグ性', class: 'topic-score4'
+                = f.range_field :score4, in: 1..10, value: "1", list: "tlist", class: 'form-control'
+              datalist id="tlist"
+                option value="1"
+                option value="2"
+                option value="3"
+                option value="4"
+                option value="5"
+                option value="6"
+                option value="7"
+                option value="8"
+                option value="9"
+                option value="10"
         p= f.submit nil, class: 'btn btn-primary mr-4'
         
-        div.container    
+        div.container 
           - @reviews.each do |r|
             div.review-title-left
               div.show-reviewe-title
@@ -47,7 +62,7 @@ div.topic-show-wrapper
                   = r.user.name unless r.user.blank?
             div.reviewe-text
               = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
-            div.review-score
+            div.reviewe-score
               = "爽快感：#{r.score}　　"
               = "達成感：#{r.score2}　　"
               = "やりこみ度：#{r.score3}　　"

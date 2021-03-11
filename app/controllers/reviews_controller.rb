@@ -13,10 +13,11 @@ class ReviewsController < ApplicationController
     @review = topic.reviews.new(review_params)
     @review.user_id = current_user.id
     if @review.save
-      redirect_to topic_path topic, notice: "コメントに成功しました"
+      flash[:notice] = "コメントに成功しました"
+      redirect_to topic_path topic
     else
-      flash.now[:danger] = "コメントに失敗しました"
-      render :new
+      flash[:notice] = "コメントに失敗しました"
+      redirect_to topic_path topic
     end
   end
   

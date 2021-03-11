@@ -46,6 +46,7 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -81,3 +82,4 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'carrierwave'
 gem 'ransack'
+gem 'fog-aws'

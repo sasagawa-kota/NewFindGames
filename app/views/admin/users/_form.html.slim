@@ -9,7 +9,7 @@
         div.row
           div.col-md-offset-4.col-md-4.users-new-container
             .form-group
-              = f.label :name, '名前', class: 'form-name-text'
+              = f.label :name, '名前  15文字以内', class: 'form-name-text'
               = f.text_field :name, class: 'form-control'
  
             .form-group
@@ -17,7 +17,7 @@
               = f.text_field :email, class: 'form-control'
   
             .form-group
-              = f.label :password, 'パスワード', class: 'form-name-text'
+              = f.label :password, 'パスワード  英数字、8文字以上15文字以内', class: 'form-name-text'
               = f.password_field :password, class: 'form-control'
   
             .form-group

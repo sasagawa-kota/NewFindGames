@@ -19,8 +19,8 @@ div.topic-show-wrapper
         = '口コミ投稿'
             
       = form_with model: [@topic, Review.new], local: true do |f|
-        p= f.text_field :game_title, class: 'new-topic-form-name-text', :size=>"74x1", placeholder:'口コミタイトル'
-        p= f.text_area :game_reviewe, class: 'new-topic-form-name-text', :size=>"90x5", placeholder:'口コミを投稿してみましょう！'
+        p= f.text_field :review_title, class: 'new-topic-form-name-text', :size=>"74x1", placeholder:'口コミタイトル'
+        p= f.text_area :review, class: 'new-topic-form-name-text', :size=>"90x5", placeholder:'口コミを投稿してみましょう！'
         span
         h4.text
           = '10段階評価(最小値は１です)'
@@ -55,14 +55,14 @@ div.topic-show-wrapper
         div.container 
           - @reviews.each do |r|
             div.review-title-left
-              div.show-reviewe-title
-                = r.game_title
+              div.show-review-title
+                = r.review_title
                 div.show-user-name
                   = r.created_at
                   = r.user.name unless r.user.blank?
-            div.reviewe-text
-              = safe_join(r.game_reviewe.to_s.split("\n"),tag(:br))
-            div.reviewe-score
+            div.review-text
+              = safe_join(r.review.to_s.split("\n"),tag(:br))
+            div.review-score
               = "爽快感：#{r.score}　　"
               = "達成感：#{r.score2}　　"
               = "やりこみ度：#{r.score3}　　"

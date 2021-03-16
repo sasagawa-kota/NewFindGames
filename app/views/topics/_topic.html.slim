@@ -1,20 +1,22 @@
 div.topic-index-wrapper
-    div.container
-      div.row
-        - topics.each do |topic|
-          div.col-md-5.col-md-offset-1
-            div.topic-body
+  div.container
+    div.row
+      - topics.each do |topic|
+        div.col-md-5.col-md-offset-1
+          div.topic-body
               
-              h2.topic-title
-                = link_to topic.title, topic
+            h2.topic-title
+              = link_to topic.title, topic
               
-              .topic-explanation
-                = image_tag topic.package_image.url, :size=>"180"
+            .topic-explanation
+              = image_tag topic.package_image.url, :size=>"180"
               
-                .topic-text
-                  = truncate(topic.description, length:100)
-                  
-              div= link_to topic, class: "btn btn-info"
-                  | 口コミを見る 
+              .topic-text
+                = truncate(topic.description, length:100)
+                
+            = "口コミ数：#{topic.reviews.count}"
+            
+            div= link_to topic, class: "btn btn-info"
+                | 口コミを見る 
   
 tbody
